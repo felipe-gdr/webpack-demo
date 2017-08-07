@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('require');
 
 const PATHS = {
   app: path.join(__dirname, 'app'),
@@ -21,8 +22,26 @@ const commonConfig = {
     new HtmlWebpackPlugin({
       title: 'Webpack demo',
     }),
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        eslint: {
+          // Fail only on errors
+          failOnWarning: false,
+          failOnError: true,
+
+          // Toggle autofix
+          fix: false,
+
+          // Output to Jenkins compatible XML
+          outputReport: {
+            filePath: 'checkstyle.xml',
+            formatter: require('eslint/lib/formatters/checkstyle'),
+          },
+        },
+      },
+    }),
   ],
-}
+};
 
 const productionConfig = () => commonConfig;
 
@@ -45,6 +64,23 @@ const developmentConfig = () => {
       // unlike default `localhost`.
       host: process.env.HOST, // Defaults to `localhost`
       port: process.env.PORT, // Defaults to 8080
+      // overlay: true is equivalent
+      overlay: {
+        errors: true,
+        warnings: true,
+      },
+    },
+    module: {
+      rules: [
+        {
+          test: /\.js$/,
+          enforce: 'pre',
+          loader: 'eslint-loader',
+          options: {
+            emitWarning: true,
+          },
+        },
+      ],
     },
   };
 
@@ -53,14 +89,14 @@ const developmentConfig = () => {
     commonConfig,
     config
   );
-}
+};
 
 module.exports = (env) => {
-  console.log("env", env);
+  console.log('env', env);
 
-  if(env === "production") {
+  if(env === 'production') {
     return productionConfig();
   } else {
     return developmentConfig();
   }
-}
+};
