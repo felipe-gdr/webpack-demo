@@ -26,19 +26,30 @@ const commonConfig = merge([
     ],
   },
   parts.lintJavaScript({ include: PATHS.app }),
-  parts.lintCSS({ include: PATHS.app }),  
+  parts.lintCSS({ include: PATHS.app }),
   parts.loadFonts({
     options: {
       name: './fonts/[name].[ext]',
     },
-  }),  
+  }),
   parts.loadJavaScript({ include: PATHS.app }),
 ]);
 
 const productionConfig = merge([
+  parts.clean(PATHS.build),
+  parts.extractBundles([
+    {
+      name: 'vendor',
+      minChunks: ({ resource }) => (
+        resource &&
+        resource.indexOf('node_modules') >= 0 &&
+        resource.match(/\.js$/)
+      ),      
+    },
+  ]),  
   parts.extractCSS({
     use: ['css-loader', parts.autoprefix()],
-  }),  
+  }),
   parts.purifyCSS({
     paths: glob.sync(`${PATHS.app}/**/*.js`, { nodir: true }),
   }),
@@ -47,10 +58,17 @@ const productionConfig = merge([
       limit: 15000,
       name: './images/[hash].[ext]',
     },
-  }),    
+  }),
+  parts.generateSourceMaps({ type: 'source-map' }),
+  parts.attachRevision(),
 ]);
 
 const developmentConfig = merge([
+  {
+    output: {
+      devtoolModuleFilenameTemplate: 'webpack:///[absolute-resource-path]',
+    },
+  },
   parts.devServer({
     // Customize host/port here if needed
     host: process.env.HOST,
@@ -58,6 +76,7 @@ const developmentConfig = merge([
   }),
   parts.loadCSS(),
   parts.loadImages(),
+  parts.generateSourceMaps({ type: 'cheap-module-eval-source-map' }),
 ]);
 
 module.exports = (env) => {
