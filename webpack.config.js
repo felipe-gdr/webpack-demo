@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
 const glob = require('glob');
+const webpack = require('webpack');
 
 const parts = require('./webpack.parts');
 
@@ -29,13 +30,24 @@ const commonConfig = merge([
   parts.lintCSS({ include: PATHS.app }),
   parts.loadFonts({
     options: {
-      name: './fonts/[name].[ext]',
+      name: '[name].[hash:8].[ext]',      
     },
   }),
   parts.loadJavaScript({ include: PATHS.app }),
 ]);
 
 const productionConfig = merge([
+  {
+    output: {
+      chunkFilename: '[name].[chunkhash:8].js',
+      filename: '[name].[chunkhash:8].js',
+    },
+    plugins: [
+      // new webpack.HashedModuleIdsPlugin(),
+      new webpack.NamedModulesPlugin(),
+    ],
+    recordsPath: path.join(__dirname, 'records.json'),
+  },
   parts.clean(PATHS.build),
   parts.extractBundles([
     {
@@ -46,6 +58,10 @@ const productionConfig = merge([
         resource.match(/\.js$/)
       ),      
     },
+    {
+      name: 'manifest',
+      minChunks: Infinity,
+    },    
   ]),  
   parts.extractCSS({
     use: ['css-loader', parts.autoprefix()],
@@ -56,11 +72,33 @@ const productionConfig = merge([
   parts.loadImages({
     options: {
       limit: 15000,
-      name: './images/[hash].[ext]',
+      name: '[name].[hash:8].[ext]',      
     },
   }),
   parts.generateSourceMaps({ type: 'source-map' }),
   parts.attachRevision(),
+  {
+    performance: {
+      hints: 'warning', // 'error' or false are valid too
+      maxEntrypointSize: 100000, // in bytes
+      maxAssetSize: 450000, // in bytes
+    },
+  },
+  // parts.minifyJavaScript(),
+  parts.minifyCSS({
+    options: {
+      discardComments: {
+        removeAll: true,
+      },
+      // Run cssnano in safe mode to avoid
+      // potentially unsafe transformations.
+      safe: true,
+    },
+  }),  
+  parts.setFreeVariable(
+    'process.env.NODE_ENV',
+    'production'
+  ),  
 ]);
 
 const developmentConfig = merge([
