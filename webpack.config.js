@@ -1,8 +1,9 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
 const glob = require('glob');
-const webpack = require('webpack');
+const HappyPack = require('happypack');
 
 const parts = require('./webpack.parts');
 
@@ -21,6 +22,12 @@ const commonConfig = merge([
       filename: '[name].js',
     },
     plugins: [
+      new HappyPack({
+        loaders: [
+          // Capture Babel loader
+          'babel-loader',
+        ],
+      }),      
       new HtmlWebpackPlugin({
         title: 'Webpack demo',
       }),
@@ -84,7 +91,7 @@ const productionConfig = merge([
       maxAssetSize: 450000, // in bytes
     },
   },
-  // parts.minifyJavaScript(),
+  parts.minifyJavaScript(),
   parts.minifyCSS({
     options: {
       discardComments: {
