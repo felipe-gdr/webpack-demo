@@ -1,6 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
 const glob = require('glob');
 const HappyPack = require('happypack');
@@ -14,9 +13,9 @@ const PATHS = {
 
 const commonConfig = merge([
   {
-    entry: {
-      app: PATHS.app,
-    },
+    // entry: {
+    //   app: PATHS.app,
+    // },
     output: {
       path: PATHS.build,
       filename: '[name].js',
@@ -28,9 +27,6 @@ const commonConfig = merge([
           'babel-loader',
         ],
       }),      
-      new HtmlWebpackPlugin({
-        title: 'Webpack demo',
-      }),
     ],
   },
   parts.lintJavaScript({ include: PATHS.app }),
@@ -125,9 +121,31 @@ const developmentConfig = merge([
 ]);
 
 module.exports = (env) => {
-  if (env === 'production') {
-    return merge(commonConfig, productionConfig);
-  }
+  const pages = [
+    parts.page({
+      title: 'Webpack demo',
+      entry: {
+        app: PATHS.app,
+      },
+    }),
+    parts.page({
+      title: 'Another demo',
+      path: 'another',
+      entry: {
+        another: path.join(PATHS.app, 'another.js'),
+      },
+    }),
+  ]; 
+  
+  // const pages = [
+  //   parts.page({ title: 'Webpack demo' }),
+  //   parts.page({ title: 'Another demo', path: 'another' }),
+  // ];
 
-  return merge(commonConfig, developmentConfig);
+
+  const config = env === 'production' ?
+    productionConfig :
+    developmentConfig;
+
+  return pages.map(page => merge(commonConfig, config, page));
 };

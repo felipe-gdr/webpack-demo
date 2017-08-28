@@ -19,7 +19,7 @@
         "byName": {},
         "byBlocks": {},
         "usedIds": {
-          "1": 1
+          "0": 0
         }
       }
     }
@@ -42,7 +42,7 @@
         "byName": {},
         "byBlocks": {},
         "usedIds": {
-          "1": 1
+          "0": 0
         }
       }
     }
@@ -75,7 +75,7 @@
         "byName": {},
         "byBlocks": {},
         "usedIds": {
-          "1": 1
+          "0": 0
         }
       }
     }
@@ -144,7 +144,9 @@
       "node_modules/react/lib/ReactElementValidator.js": "./node_modules/react/lib/ReactElementValidator.js",
       "node_modules/react/lib/ReactPropTypeLocationNames.js": "./node_modules/react/lib/ReactPropTypeLocationNames.js",
       "node_modules/react/lib/ReactPropTypesSecret.js": "./node_modules/react/lib/ReactPropTypesSecret.js",
-      "node_modules/react/lib/checkReactTypeSpec.js": "./node_modules/react/lib/checkReactTypeSpec.js"
+      "node_modules/react/lib/checkReactTypeSpec.js": "./node_modules/react/lib/checkReactTypeSpec.js",
+      "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!node_modules/font-awesome/css/font-awesome.css": "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!./node_modules/font-awesome/css/font-awesome.css",
+      "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!node_modules/postcss-loader/lib/index.js?{}!app/main.css": "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!./node_modules/postcss-loader/lib/index.js?{}!./app/main.css"
     },
     "usedIds": {
       "./app/an-image.js": "./app/an-image.js",
@@ -204,7 +206,9 @@
       "./node_modules/react/lib/ReactElementValidator.js": "./node_modules/react/lib/ReactElementValidator.js",
       "./node_modules/react/lib/ReactPropTypeLocationNames.js": "./node_modules/react/lib/ReactPropTypeLocationNames.js",
       "./node_modules/react/lib/ReactPropTypesSecret.js": "./node_modules/react/lib/ReactPropTypesSecret.js",
-      "./node_modules/react/lib/checkReactTypeSpec.js": "./node_modules/react/lib/checkReactTypeSpec.js"
+      "./node_modules/react/lib/checkReactTypeSpec.js": "./node_modules/react/lib/checkReactTypeSpec.js",
+      "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!./node_modules/font-awesome/css/font-awesome.css": "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!./node_modules/font-awesome/css/font-awesome.css",
+      "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!./node_modules/postcss-loader/lib/index.js?{}!./app/main.css": "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!./node_modules/postcss-loader/lib/index.js?{}!./app/main.css"
     }
   },
   "chunks": {
