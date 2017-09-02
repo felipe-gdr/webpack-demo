@@ -19,7 +19,7 @@
         "byName": {},
         "byBlocks": {},
         "usedIds": {
-          "0": 0
+          "1": 1
         }
       }
     }
@@ -42,7 +42,7 @@
         "byName": {},
         "byBlocks": {},
         "usedIds": {
-          "0": 0
+          "1": 1
         }
       }
     }
@@ -75,7 +75,7 @@
         "byName": {},
         "byBlocks": {},
         "usedIds": {
-          "0": 0
+          "1": 1
         }
       }
     }
@@ -146,7 +146,9 @@
       "node_modules/react/lib/ReactPropTypesSecret.js": "./node_modules/react/lib/ReactPropTypesSecret.js",
       "node_modules/react/lib/checkReactTypeSpec.js": "./node_modules/react/lib/checkReactTypeSpec.js",
       "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!node_modules/font-awesome/css/font-awesome.css": "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!./node_modules/font-awesome/css/font-awesome.css",
-      "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!node_modules/postcss-loader/lib/index.js?{}!app/main.css": "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!./node_modules/postcss-loader/lib/index.js?{}!./app/main.css"
+      "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!node_modules/postcss-loader/lib/index.js?{}!app/main.css": "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!./node_modules/postcss-loader/lib/index.js?{}!./app/main.css",
+      "node_modules/happypack/loader.js??ref--3!node_modules/eslint-loader/index.js!app/another.js": "./app/another.js",
+      "node_modules/babel-loader/lib/index.js??ref--3!node_modules/eslint-loader/index.js!app/another.js": "./app/another.js"
     },
     "usedIds": {
       "./app/an-image.js": "./app/an-image.js",
@@ -208,24 +210,52 @@
       "./node_modules/react/lib/ReactPropTypesSecret.js": "./node_modules/react/lib/ReactPropTypesSecret.js",
       "./node_modules/react/lib/checkReactTypeSpec.js": "./node_modules/react/lib/checkReactTypeSpec.js",
       "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!./node_modules/font-awesome/css/font-awesome.css": "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!./node_modules/font-awesome/css/font-awesome.css",
-      "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!./node_modules/postcss-loader/lib/index.js?{}!./app/main.css": "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!./node_modules/postcss-loader/lib/index.js?{}!./app/main.css"
+      "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!./node_modules/postcss-loader/lib/index.js?{}!./app/main.css": "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!./node_modules/postcss-loader/lib/index.js?{}!./app/main.css",
+      "./app/another.js": "./app/another.js"
     }
   },
   "chunks": {
     "byName": {
       "vendor": 1,
       "app": 2,
-      "manifest": 3
+      "manifest": 3,
+      "another": 0
     },
     "byBlocks": {
-      "node_modules/babel-loader/lib/index.js??ref--3!node_modules/eslint-loader/index.js!app/component.js:0/0": 0,
+      "node_modules/babel-loader/lib/index.js??ref--3!node_modules/eslint-loader/index.js!app/component.js:0/0": 5,
       "node_modules/happypack/loader.js??ref--3!node_modules/eslint-loader/index.js!app/component.js:0/0": 4
     },
     "usedIds": {
+      "0": 0,
       "1": 1,
       "2": 2,
       "3": 3,
-      "4": 4
+      "5": 5
     }
-  }
+  },
+  "html-webpack-plugin for \"another/index.html\"": [
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/html-webpack-plugin/lib/loader.js!node_modules/html-webpack-plugin/default_index.ejs": "./node_modules/html-webpack-plugin/lib/loader.js!./node_modules/html-webpack-plugin/default_index.ejs",
+          "node_modules/lodash/lodash.js": "./node_modules/lodash/lodash.js",
+          "node_modules/webpack/buildin/global.js": "./node_modules/webpack/buildin/global.js",
+          "node_modules/webpack/buildin/module.js": "./node_modules/webpack/buildin/module.js"
+        },
+        "usedIds": {
+          "./node_modules/html-webpack-plugin/lib/loader.js!./node_modules/html-webpack-plugin/default_index.ejs": "./node_modules/html-webpack-plugin/lib/loader.js!./node_modules/html-webpack-plugin/default_index.ejs",
+          "./node_modules/lodash/lodash.js": "./node_modules/lodash/lodash.js",
+          "./node_modules/webpack/buildin/global.js": "./node_modules/webpack/buildin/global.js",
+          "./node_modules/webpack/buildin/module.js": "./node_modules/webpack/buildin/module.js"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    }
+  ]
 }

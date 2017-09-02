@@ -168,8 +168,8 @@ exports.loadJavaScript = ({ include, exclude }) => ({
         include,
         exclude,
 
-        // loader: 'babel-loader',
-        loader: 'happypack/loader',
+        loader: 'babel-loader',
+        // loader: 'happypack/loader',
         options: {
           // Enable caching for improved performance during
           // development.
@@ -241,6 +241,7 @@ exports.page = ({
   ),
   title,
   entry,
+  chunks,
 } = {}) => ({
   entry,
   plugins: [
@@ -248,6 +249,7 @@ exports.page = ({
       filename: `${path && path + '/'}index.html`,
       template,
       title,
+      chunks,
     }),
   ],
 });
