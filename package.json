@@ -11,7 +11,8 @@
     "build:ssr": "webpack --config webpack.ssr.js",
     "lint:js": "eslint app/ webpack.*.js --cache",
     "lint:style": "stylelint app/**/*.css",
-    "stats": "webpack --env production --profile --json > stats.json"
+    "stats": "webpack --env production --profile --json > stats.json",
+    "build:i18n": "webpack --config webpack.i18n.js"
   },
   "keywords": [],
   "author": "",
@@ -39,6 +40,7 @@
     "glob": "^7.1.2",
     "happypack": "^4.0.0-beta.2",
     "html-webpack-plugin": "^2.30.1",
+    "i18n-webpack-plugin": "^1.0.0",
     "less": "^2.7.2",
     "less-loader": "^4.0.5",
     "optimize-css-assets-webpack-plugin": "^3.1.1",
@@ -50,7 +52,8 @@
     "url-loader": "^0.5.9",
     "webpack": "^3.4.1",
     "webpack-dev-server": "^2.6.1",
-    "webpack-merge": "^4.1.0"
+    "webpack-merge": "^4.1.0",
+    "worker-loader": "^0.8.1"
   },
   "dependencies": {
     "font-awesome": "^4.7.0",

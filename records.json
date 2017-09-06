@@ -19,7 +19,7 @@
         "byName": {},
         "byBlocks": {},
         "usedIds": {
-          "1": 1
+          "0": 0
         }
       }
     }
@@ -42,7 +42,7 @@
         "byName": {},
         "byBlocks": {},
         "usedIds": {
-          "1": 1
+          "0": 0
         }
       }
     }
@@ -75,7 +75,7 @@
         "byName": {},
         "byBlocks": {},
         "usedIds": {
-          "1": 1
+          "0": 0
         }
       }
     }
@@ -148,7 +148,8 @@
       "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!node_modules/font-awesome/css/font-awesome.css": "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!./node_modules/font-awesome/css/font-awesome.css",
       "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!node_modules/postcss-loader/lib/index.js?{}!app/main.css": "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!./node_modules/postcss-loader/lib/index.js?{}!./app/main.css",
       "node_modules/happypack/loader.js??ref--3!node_modules/eslint-loader/index.js!app/another.js": "./app/another.js",
-      "node_modules/babel-loader/lib/index.js??ref--3!node_modules/eslint-loader/index.js!app/another.js": "./app/another.js"
+      "node_modules/babel-loader/lib/index.js??ref--3!node_modules/eslint-loader/index.js!app/another.js": "./app/another.js",
+      "node_modules/worker-loader/index.js!node_modules/babel-loader/lib/index.js??ref--3!node_modules/eslint-loader/index.js!app/worker.js": "./node_modules/worker-loader/index.js!./app/worker.js"
     },
     "usedIds": {
       "./app/an-image.js": "./app/an-image.js",
@@ -211,7 +212,8 @@
       "./node_modules/react/lib/checkReactTypeSpec.js": "./node_modules/react/lib/checkReactTypeSpec.js",
       "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!./node_modules/font-awesome/css/font-awesome.css": "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!./node_modules/font-awesome/css/font-awesome.css",
       "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!./node_modules/postcss-loader/lib/index.js?{}!./app/main.css": "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!./node_modules/postcss-loader/lib/index.js?{}!./app/main.css",
-      "./app/another.js": "./app/another.js"
+      "./app/another.js": "./app/another.js",
+      "./node_modules/worker-loader/index.js!./app/worker.js": "./node_modules/worker-loader/index.js!./app/worker.js"
     }
   },
   "chunks": {
@@ -251,6 +253,27 @@
       },
       "chunks": {
         "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "1": 1
+        }
+      }
+    }
+  ],
+  "worker": [
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true}!node_modules/eslint-loader/index.js!app/worker.js": "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true}!./node_modules/eslint-loader/index.js!./app/worker.js"
+        },
+        "usedIds": {
+          "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true}!./node_modules/eslint-loader/index.js!./app/worker.js": "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true}!./node_modules/eslint-loader/index.js!./app/worker.js"
+        }
+      },
+      "chunks": {
+        "byName": {
+          "main": 0
+        },
         "byBlocks": {},
         "usedIds": {
           "0": 0

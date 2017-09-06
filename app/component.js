@@ -1,3 +1,5 @@
+// import Worker from 'worker-loader!./worker';
+
 export default (message) => {
   const element = document.createElement('div');
 
