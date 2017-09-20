@@ -149,7 +149,8 @@
       "node_modules/css-loader/index.js!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!node_modules/postcss-loader/lib/index.js?{}!app/main.css": "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!./node_modules/postcss-loader/lib/index.js?{}!./app/main.css",
       "node_modules/happypack/loader.js??ref--3!node_modules/eslint-loader/index.js!app/another.js": "./app/another.js",
       "node_modules/babel-loader/lib/index.js??ref--3!node_modules/eslint-loader/index.js!app/another.js": "./app/another.js",
-      "node_modules/worker-loader/index.js!node_modules/babel-loader/lib/index.js??ref--3!node_modules/eslint-loader/index.js!app/worker.js": "./node_modules/worker-loader/index.js!./app/worker.js"
+      "node_modules/worker-loader/index.js!node_modules/babel-loader/lib/index.js??ref--3!node_modules/eslint-loader/index.js!app/worker.js": "./node_modules/worker-loader/index.js!./app/worker.js",
+      "external \"window.require(\\\"jira/flag\\\");\"": "jira/flag"
     },
     "usedIds": {
       "./app/an-image.js": "./app/an-image.js",
@@ -213,7 +214,8 @@
       "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!./node_modules/font-awesome/css/font-awesome.css": "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!./node_modules/font-awesome/css/font-awesome.css",
       "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!./node_modules/postcss-loader/lib/index.js?{}!./app/main.css": "./node_modules/css-loader/index.js!./node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!./node_modules/postcss-loader/lib/index.js?{}!./app/main.css",
       "./app/another.js": "./app/another.js",
-      "./node_modules/worker-loader/index.js!./app/worker.js": "./node_modules/worker-loader/index.js!./app/worker.js"
+      "./node_modules/worker-loader/index.js!./app/worker.js": "./node_modules/worker-loader/index.js!./app/worker.js",
+      "jira/flag": "jira/flag"
     }
   },
   "chunks": {

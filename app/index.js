@@ -7,6 +7,8 @@ import anImage from './an-image';
 import './main.css';
 import { bake } from './shake';
 
+import flag from 'jira/flag';
+
 bake();
 
 const func = () => 'func';

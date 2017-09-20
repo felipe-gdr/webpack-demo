@@ -28,6 +28,9 @@ const commonConfig = merge([
         ],
       }),      
     ],
+    externals:{
+      'jira/flag':'window.require("jira/flag");',
+    },    
   },
   parts.lintJavaScript({ include: PATHS.app }),
   parts.lintCSS({ include: PATHS.app }),
